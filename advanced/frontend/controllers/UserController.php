@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 namespace frontend\controllers;
 
 use Yii;
@@ -17,20 +16,17 @@ use frontend\models\ContactForm;
 /**
  * Site controller
  */
-class UserController extends Controller{
-    public function actionDel(){
-        $request=Yii::$app->request;
-        $id=$request->get("id");
-        $res=Yii::$app->db->createCommand()->delete("yan","id=$id")->execute();
-        if($res){
-            $this->redirect("?r=User/show");
-=======
-
-namespace frontend\controllers;
-use yii\web\Controller;
-use Yii;
-class UserController extends  Controller
+class UserController extends Controller
 {
+    public function actionDel()
+    {
+        $request = Yii::$app->request;
+        $id = $request->get("id");
+        $res = Yii::$app->db->createCommand()->delete("yan", "id=$id")->execute();
+        if ($res) {
+            $this->redirect("?r=User/show");
+        }
+    }
     public  function actionIndex()
     {
        return  $this->render("index");
@@ -55,7 +51,6 @@ class UserController extends  Controller
         else
         {
             return $this->render('index');
->>>>>>> 6165ed145a9f3e8a25ea71f1adba58484ac74cf3
         }
     }
 }
